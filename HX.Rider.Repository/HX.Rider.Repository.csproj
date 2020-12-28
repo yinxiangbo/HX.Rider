@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\HX.Rider.Common\HX.Rider.Common.csproj" />
+    <ProjectReference Include="..\HX.Rider.Exception\HX.Rider.Exception.csproj" />
+    <ProjectReference Include="..\HX.Rider.IRepository\HX.Rider.IRepository.csproj" />
+  </ItemGroup>
+
+</Project>
