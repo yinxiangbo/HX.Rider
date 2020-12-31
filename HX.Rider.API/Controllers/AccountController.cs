@@ -70,26 +70,38 @@ namespace HX.Rider.API.Controllers
         /// <summary>
         /// 刷新Token
         /// </summary>
-        /// <param name="refreshToken">refreshToken</param>
+        /// <param name="request">请求实体</param>
         /// <returns></returns>
+        [AllowAnonymous]
         [HttpPost]
-        public async Task<ApiResult<LoginResult>> RefreshToken(string refreshToken)
+        public async Task<ApiResult<LoginResult>> RefreshToken([FromBody] RefreshTokenRequest request)
         {
-            if (string.IsNullOrEmpty(refreshToken))
+            if (!ModelState.IsValid)
                 return ApiResult.FailedResult<LoginResult>(ApiResultCode.ARGSERROR, "refreshToken不能为空！");
-            var accessToken = await HttpContext.GetTokenAsync("Bearer", "access_token");
-            var refreshResult =await tokenService.Refresh(refreshToken, accessToken, DateTime.Now);
+            var refreshResult =await tokenService.Refresh(request.RefreshToken, request.AccessToken, DateTime.Now);
             return ApiResult.SuccessResult(new LoginResult() {
                 UserName = User.Identity.Name,
                 AccessToken = refreshResult?.AccessToken,
                 RefreshToken = refreshResult?.RefreshToken?.TokenString
             });
         }
+
+
         //public async Task<ApiResult<LoginResult>> WeChatLogin([FromBody] WxLoginRequest request)
         //{
         //    if (!ModelState.IsValid)
         //        return ApiResult.FailedResult<LoginResult>(ApiResultCode.ARGSERROR, "OpenId或者UnionId不能为空！");
         //    return null;
         //}
+        /// <summary>
+        /// 测试接口
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public async Task<ApiResult<List<UserInfo>>> GetUserList()
+        {
+            var userList= await accountService.GetUserList();
+            return ApiResult.SuccessResult(userList);
+        }
     }
 }

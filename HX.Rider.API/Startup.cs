@@ -51,6 +51,11 @@ namespace HX.Rider.API
             services.AddRedisCache(Config);
             //×¢²áSugarSql
             services.AddSqlSugar(Config);
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAll",
+                    builder => { builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader(); });
+            });
         }
         /// <summary>
         /// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -74,6 +79,7 @@ namespace HX.Rider.API
             });
             app.UseAppExceptionHandler();
             app.UseRouting();
+            app.UseCors("cors");
             app.UseAuthentication();
             app.UseAuthorization();
             app.UseEndpoints(endpoints =>

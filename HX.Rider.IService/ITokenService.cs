@@ -57,7 +57,8 @@ namespace HX.Rider.IService
         /// 解码JwtToken
         /// </summary>
         /// <param name="token"></param>
+        /// <param name="validateLefttime">是否校验过期时间</param>
         /// <returns>UserInfo</returns>
-        (ClaimsPrincipal, JwtSecurityToken) DecodeJwtToken(string token);
+        (ClaimsPrincipal, JwtSecurityToken) DecodeJwtToken(string token, bool validateLefttime = true);
     }
 }

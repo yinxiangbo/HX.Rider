@@ -1,5 +1,6 @@
 ﻿using HX.Rider.Model;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace HX.Rider.IService
@@ -17,5 +18,6 @@ namespace HX.Rider.IService
         /// <returns></returns>
         Task<UserInfo> IsValidUserCredentials(string userName,string password);
 
+        Task<List<UserInfo>> GetUserList();
     }
 }

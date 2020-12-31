@@ -109,7 +109,7 @@ namespace HX.Rider.Service
         /// <returns></returns>
         public async Task<JwtAuthInfo> Refresh(string refreshToken, string accessToken, DateTime dateTime)
         {
-            var (principal, jwtToken) = DecodeJwtToken(accessToken);
+            var (principal, jwtToken) = DecodeJwtToken(accessToken,false);
             if (jwtToken == null || !jwtToken.Header.Alg.Equals(SecurityAlgorithms.HmacSha256Signature))
                 throw new SecurityTokenException("Invalid token");
             var tokenInfo =await tokenRepository.GetByToken(refreshToken);
@@ -154,7 +154,7 @@ namespace HX.Rider.Service
         /// <param name="token"></param>
         /// <param name="jwtTokenConfig"></param>
         /// <returns></returns>
-        public (ClaimsPrincipal, JwtSecurityToken) DecodeJwtToken(string token)
+        public (ClaimsPrincipal, JwtSecurityToken) DecodeJwtToken(string token,bool validateLefttime=true)
         {
             if (string.IsNullOrWhiteSpace(token))
                 throw new SecurityTokenException("Invalid token");
@@ -168,8 +168,8 @@ namespace HX.Rider.Service
                     IssuerSigningKey = new SymmetricSecurityKey(secret),
                     ValidAudience = jwtTokenConfig.Audience,
                     ValidateAudience = true,
-                    ValidateLifetime = true,
-                    ClockSkew = TimeSpan.FromMinutes(1)
+                    ValidateLifetime = validateLefttime,
+                    ClockSkew = TimeSpan.FromSeconds(30)
                 }, out var validatedToken);
             return (principal, validatedToken as JwtSecurityToken);
         }

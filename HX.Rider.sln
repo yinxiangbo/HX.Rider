@@ -17,21 +17,23 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Service", "Service", "{D9E5
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Repository", "Repository", "{BE0123A4-584A-4F62-BDE6-3659BE6807BB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HX.Rider.IRepository", "HX.Rider.IRepository\HX.Rider.IRepository.csproj", "{F41B16E9-3D2F-4AE8-96F5-89DDBD943A97}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HX.Rider.IRepository", "HX.Rider.IRepository\HX.Rider.IRepository.csproj", "{F41B16E9-3D2F-4AE8-96F5-89DDBD943A97}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HX.Rider.Repository", "HX.Rider.Repository\HX.Rider.Repository.csproj", "{4D96343E-C8A1-486C-B65B-B6052CF8D8A9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HX.Rider.Repository", "HX.Rider.Repository\HX.Rider.Repository.csproj", "{4D96343E-C8A1-486C-B65B-B6052CF8D8A9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{EC71640B-BB5F-4806-84B7-A5657D06644C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HX.Rider.Common", "HX.Rider.Common\HX.Rider.Common.csproj", "{037843B3-7E98-43F5-9297-E2C837D2D820}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HX.Rider.Common", "HX.Rider.Common\HX.Rider.Common.csproj", "{037843B3-7E98-43F5-9297-E2C837D2D820}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HX.Rider.Exception", "HX.Rider.Exception\HX.Rider.Exception.csproj", "{41BFCB48-0CF2-4B79-999B-1C9B3416D36B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HX.Rider.Exception", "HX.Rider.Exception\HX.Rider.Exception.csproj", "{41BFCB48-0CF2-4B79-999B-1C9B3416D36B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Model", "Model", "{7DFBBF65-BEA0-496D-AE4B-D4613DE4881A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HX.Rider.Entity", "HX.Rider.Entity\HX.Rider.Entity.csproj", "{AAB868F8-BD64-4073-BDED-74BA95BBBC74}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HX.Rider.Entity", "HX.Rider.Entity\HX.Rider.Entity.csproj", "{AAB868F8-BD64-4073-BDED-74BA95BBBC74}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HX.Rider.Model", "HX.Rider.Model\HX.Rider.Model.csproj", "{5FF6DA4D-C237-4A83-9C3E-1876D77F3D7B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HX.Rider.Extensions", "HX.Rider.Extensions\HX.Rider.Extensions.csproj", "{716C3A21-E453-48E1-9E89-4874E542F75B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -79,6 +81,10 @@ Global
 		{5FF6DA4D-C237-4A83-9C3E-1876D77F3D7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5FF6DA4D-C237-4A83-9C3E-1876D77F3D7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5FF6DA4D-C237-4A83-9C3E-1876D77F3D7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{716C3A21-E453-48E1-9E89-4874E542F75B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{716C3A21-E453-48E1-9E89-4874E542F75B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{716C3A21-E453-48E1-9E89-4874E542F75B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{716C3A21-E453-48E1-9E89-4874E542F75B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -93,6 +99,7 @@ Global
 		{41BFCB48-0CF2-4B79-999B-1C9B3416D36B} = {EC71640B-BB5F-4806-84B7-A5657D06644C}
 		{AAB868F8-BD64-4073-BDED-74BA95BBBC74} = {7DFBBF65-BEA0-496D-AE4B-D4613DE4881A}
 		{5FF6DA4D-C237-4A83-9C3E-1876D77F3D7B} = {7DFBBF65-BEA0-496D-AE4B-D4613DE4881A}
+		{716C3A21-E453-48E1-9E89-4874E542F75B} = {EC71640B-BB5F-4806-84B7-A5657D06644C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AE96F425-13AA-436C-B3F2-E3D69E0597A3}

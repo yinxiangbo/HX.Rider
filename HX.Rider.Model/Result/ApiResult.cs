@@ -29,7 +29,7 @@ namespace HX.Rider.Model
         /// 服务器响应时间
         /// </summary>
         [JsonProperty("timestamp")]
-        public string ResponseTime { get; set; } = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+        public string TimeStamp { get; set; } = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
 
         /// <summary>
         /// 成功结果
