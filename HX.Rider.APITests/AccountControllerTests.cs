@@ -31,10 +31,10 @@ namespace HX.Rider.APITests
         {
             var credentials = new LoginRequest
             {
-                UserName = "admin",
-                Password = "securePassword"
+                UserName = "hxrc2",
+                Password = "hx_2020"
             };
-            var loginResponse = await _httpClient.PostAsync("api/account/login",
+            var loginResponse = await _httpClient.PostAsync("api/user/login",
                 new StringContent(JsonConvert.SerializeObject(credentials), Encoding.UTF8, MediaTypeNames.Application.Json));
 
             Assert.AreEqual(HttpStatusCode.OK, loginResponse.StatusCode);
@@ -45,6 +45,25 @@ namespace HX.Rider.APITests
             Assert.AreEqual(credentials.UserName, loginResult.Data.UserName);
             Assert.IsFalse(string.IsNullOrWhiteSpace(loginResult.Data.AccessToken));
             Assert.IsFalse(string.IsNullOrWhiteSpace(loginResult.Data.RefreshToken));
+        }
+
+        [TestMethod]
+        public async Task ShouldReturnCorrectResponseForRegister()
+        {
+            var registerModel = new RegisterRequest() {
+                UserName="hxrc2",
+                Password="hx_2020",
+                MobilePhone="13165018829",
+                IDNumber="320721198610151617"
+            };
+
+            var registerResponse = await _httpClient.PostAsync("api/user/register",
+                new StringContent(JsonConvert.SerializeObject(registerModel), Encoding.UTF8, MediaTypeNames.Application.Json));
+            Assert.AreEqual(HttpStatusCode.OK, registerResponse.StatusCode);
+
+            var responseContent = await registerResponse.Content.ReadAsStringAsync();
+            var registerResult = JsonConvert.DeserializeObject<ApiResult<LoginResult>>(responseContent);
+            Assert.IsNotNull(registerResult.Data);
         }
     }
 }

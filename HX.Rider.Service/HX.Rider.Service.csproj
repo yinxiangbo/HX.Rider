@@ -5,12 +5,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.0" />
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="5.0.0" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.8.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\HX.Rider.Common\HX.Rider.Common.csproj" />
+    <ProjectReference Include="..\HX.Rider.Exception\HX.Rider.Exception.csproj" />
     <ProjectReference Include="..\HX.Rider.IRepository\HX.Rider.IRepository.csproj" />
     <ProjectReference Include="..\HX.Rider.IService\HX.Rider.IService.csproj" />
   </ItemGroup>

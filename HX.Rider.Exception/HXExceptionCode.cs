@@ -9,6 +9,10 @@ namespace HX.Rider.Exception
         /// <summary>
         /// 认证失败
         /// </summary>
-        public const string AUTH_FAILED = "A001";
+        public const string AUTH_FAILED = "1001";
+        /// <summary>
+        /// 用户不存在
+        /// </summary>
+        public const string USER_NOT_EXISTS = "2001";
     }
 }

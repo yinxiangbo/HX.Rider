@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HX.Rider.IRepository
 {
-    public interface ITokenRepository
+    public interface ITokenRepository:IBaseRepository<RefreshTokenEntity>
     {
         /// <summary>
         /// 添加或者更新，如果存在更新，否则插入

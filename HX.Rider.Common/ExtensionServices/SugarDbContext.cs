@@ -28,13 +28,14 @@ namespace HX.Rider.Common
         /// <summary>
         /// 获取数据库执行Client
         /// </summary>
+        /// <param name="dbType">数据库类型</param>
         /// <returns></returns>
-        public SqlSugarClient GetDbContext()
+        public SqlSugarClient GetDbContext(DbType dbType = DbType.MySql)
         {
             var dbContext = new SqlSugarClient(new ConnectionConfig()
             {
                 ConnectionString = options.ConnectionString,
-                DbType = DbType.MySql,
+                DbType = dbType,
                 IsAutoCloseConnection = true,
                 InitKeyType = InitKeyType.Attribute,
                 IsShardSameThread = true

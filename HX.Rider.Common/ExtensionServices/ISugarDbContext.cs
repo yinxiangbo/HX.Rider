@@ -7,6 +7,6 @@ namespace HX.Rider.Common
 {
     public interface ISugarDbContext
     {
-        SqlSugarClient GetDbContext();
+        SqlSugarClient GetDbContext(DbType dbType=DbType.MySql);
     }
 }

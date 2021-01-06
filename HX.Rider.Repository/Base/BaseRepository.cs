@@ -17,12 +17,14 @@ namespace HX.Rider.Repository.Base
     public class BaseRepository<TEntity>: IBaseRepository<TEntity> where TEntity : EntityBase, new()
     {
         private readonly ISugarDbContext db;
-        public BaseRepository(ISugarDbContext db)
+        private readonly DbType dbType;
+        public BaseRepository(ISugarDbContext db,DbType dbType= DbType.MySql)
         {
             this.db = db;
+            this.dbType = dbType;
         }
 
-        protected ISqlSugarClient dbContext => db.GetDbContext();
+        protected ISqlSugarClient dbContext => db.GetDbContext(dbType);
         #region 暂时去掉
         #region 根据主键获取实体对象
         /// <summary>

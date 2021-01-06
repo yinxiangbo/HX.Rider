@@ -29,8 +29,9 @@ namespace HX.Rider.API.Extensions
             services.Configure<JwtTokenOptions>(config.GetSection(
                                        JwtTokenOptions.JwtToken));
             services.AddSingleton<ITokenRepository, TokenRepository>();
+            services.AddSingleton<IUserRepository, UserRepository>();
             //Service DI
-            services.AddSingleton<IAccountService, AccountService>();
+            services.AddSingleton<IUserService, UserService>();
             services.AddSingleton<ITokenService, TokenService>();
             return services;
         }

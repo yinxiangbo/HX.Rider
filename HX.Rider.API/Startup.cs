@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using HX.Rider.API.Extensions;
 using HX.Rider.IService;
 using HX.Rider.Service;
@@ -56,6 +57,8 @@ namespace HX.Rider.API
                 options.AddPolicy("AllowAll",
                     builder => { builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader(); });
             });
+            //×¢²áautomapper
+            services.AddAutoMapper(typeof(Startup));
         }
         /// <summary>
         /// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

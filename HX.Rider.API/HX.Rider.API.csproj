@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.10" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
     <PackageReference Include="Serilog.AspNetCore" Version="3.4.0" />
@@ -24,6 +25,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\HX.Rider.Common\HX.Rider.Common.csproj" />
+    <ProjectReference Include="..\HX.Rider.Extensions\HX.Rider.Extensions.csproj" />
     <ProjectReference Include="..\HX.Rider.IService\HX.Rider.IService.csproj" />
     <ProjectReference Include="..\HX.Rider.Model\HX.Rider.Model.csproj" />
     <ProjectReference Include="..\HX.Rider.Repository\HX.Rider.Repository.csproj" />
