@@ -8,9 +8,12 @@ namespace HX.Rider.Model
     /// <summary>
     /// SqlSugarOptions
     /// </summary>
-    public class SqlSugarOptions : IOptions<SqlSugarOptions>
+    public class SqlSugarOptions
     {
-        public const string SqlSugar = "SqlSugarOptions";
+        /// <summary>
+        /// SqlSugar
+        /// </summary>
+        public const string DbName = "CommonSqlOptions";
 
         /// <summary>
         /// SQL连接字符创
@@ -22,7 +25,9 @@ namespace HX.Rider.Model
         /// </summary>
         public bool OutPutSql { get; set; }
 
-
-        SqlSugarOptions IOptions<SqlSugarOptions>.Value => this;
+        /// <summary>
+        /// 数据库类型
+        /// </summary>
+        public int DbType { get; set; }
     }
 }

@@ -25,7 +25,6 @@ namespace HX.Rider.API.Extensions
         public static IServiceCollection AddSqlSugar(this IServiceCollection services, IConfiguration config, ServiceLifetime lifetime = ServiceLifetime.Singleton)
         {
             //services.AddOptions();
-            services.Configure<SqlSugarOptions>(config.GetSection(SqlSugarOptions.SqlSugar));
             services.Add(ServiceDescriptor.Singleton<ISugarDbContext, SugarDbContext>());
             return services;
         }

@@ -2,6 +2,7 @@
 using HX.Rider.Entity;
 using HX.Rider.IRepository;
 using HX.Rider.Model;
+using Microsoft.Extensions.Configuration;
 using SqlSugar;
 using System;
 using System.Collections.Generic;
@@ -16,15 +17,15 @@ namespace HX.Rider.Repository.Base
 
     public class BaseRepository<TEntity>: IBaseRepository<TEntity> where TEntity : EntityBase, new()
     {
+        private readonly string dbName;
         private readonly ISugarDbContext db;
-        private readonly DbType dbType;
-        public BaseRepository(ISugarDbContext db,DbType dbType= DbType.MySql)
+        public BaseRepository(ISugarDbContext db, string dbName= SqlSugarOptions.DbName)
         {
             this.db = db;
-            this.dbType = dbType;
+            this.dbName = dbName;
         }
 
-        protected ISqlSugarClient dbContext => db.GetDbContext(dbType);
+        protected ISqlSugarClient dbContext => db.GetDbContext(dbName);
         #region 暂时去掉
         #region 根据主键获取实体对象
         /// <summary>

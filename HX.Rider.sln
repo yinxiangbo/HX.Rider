@@ -33,7 +33,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HX.Rider.Entity", "HX.Rider
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HX.Rider.Model", "HX.Rider.Model\HX.Rider.Model.csproj", "{5FF6DA4D-C237-4A83-9C3E-1876D77F3D7B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HX.Rider.Extensions", "HX.Rider.Extensions\HX.Rider.Extensions.csproj", "{716C3A21-E453-48E1-9E89-4874E542F75B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HX.Rider.Extensions", "HX.Rider.Extensions\HX.Rider.Extensions.csproj", "{716C3A21-E453-48E1-9E89-4874E542F75B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

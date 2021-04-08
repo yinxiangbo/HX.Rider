@@ -74,5 +74,10 @@ namespace HX.Rider.Entity
         /// 用户状态
         /// </summary>
         public int Status { get; set; }
+
+        /// <summary>
+        /// 微信openId
+        /// </summary>
+        public string WxOpenId { get; set; }
     }
 }

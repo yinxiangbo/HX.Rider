@@ -39,6 +39,7 @@ namespace HX.Rider.API.Extensions
                 throw new ArgumentNullException(nameof(services));
             if (config == null)
                 throw new ArgumentNullException(nameof(config));
+            var test = config["WeChatOptions.AppId"];
             services.AddRedisCache();
             services.Configure<RedisOptions>(config.GetSection(RedisOptions.Redis));
             return services;

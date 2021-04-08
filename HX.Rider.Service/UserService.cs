@@ -61,6 +61,7 @@ namespace HX.Rider.Service
 
         public async Task<List<UserModel>> GetUserList()
         {
+
             var userList = new List<UserModel>();
             userList.Add(new UserModel() { Id = 123, UserName = "admin" });
             userList.Add(new UserModel() { Id = 234, UserName = "用户1" });

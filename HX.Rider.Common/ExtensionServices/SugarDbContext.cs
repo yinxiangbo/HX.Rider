@@ -19,26 +19,26 @@ namespace HX.Rider.Common
     {
         #region 构造器，ConnectionConfig DI
         private readonly ILogger<SugarDbContext> logger;
-        private readonly SqlSugarOptions options;
-        public SugarDbContext(IOptions<SqlSugarOptions> optionsAccessor, ILogger<SugarDbContext> logger)
+        private readonly IConfiguration configuration;
+        public SugarDbContext(ILogger<SugarDbContext> logger, IConfiguration configuration)
         {
-            this.options = optionsAccessor.Value;
             this.logger = logger;
+            this.configuration = configuration;
         }
         /// <summary>
         /// 获取数据库执行Client
         /// </summary>
         /// <param name="dbType">数据库类型</param>
         /// <returns></returns>
-        public SqlSugarClient GetDbContext(DbType dbType = DbType.MySql)
+        public SqlSugarClient GetDbContext(string optionName= SqlSugarOptions.DbName)
         {
+            var options = configuration.GetSection(optionName).Get<SqlSugarOptions>();
             var dbContext = new SqlSugarClient(new ConnectionConfig()
             {
                 ConnectionString = options.ConnectionString,
-                DbType = dbType,
+                DbType = (DbType)options.DbType,
                 IsAutoCloseConnection = true,
-                InitKeyType = InitKeyType.Attribute,
-                IsShardSameThread = true
+                InitKeyType = InitKeyType.Attribute
             });
             if (options.OutPutSql)
             {
